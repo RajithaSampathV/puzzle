@@ -1,5 +1,3 @@
-# puzzle
-
 # Fruit Box Puzzle
 
 This is a simple web-based puzzle game where players need to match fruit labels to the correct boxes. The game provides a fun and challenging experience for users.
