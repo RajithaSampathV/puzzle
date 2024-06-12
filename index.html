@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Box Puzzle</title>
+    <link rel="stylesheet" href="Asset/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="day-button">Day 1</button>
+            <div class="hearts">
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <i class="fa-solid fa-rotate-right reset" onclick="resetGame()"></i>
+            </div>
+        </div>        
+        <div class="puzzle">
+            <p class="question"><strong>Puzzle:</strong> There are three boxes. One contains apples, another contains oranges, and the third contains both apples and oranges. Each box is labeled, but <span class="highlight">all the labels are wrong</span>. You are allowed to pick one fruit from one box.</p>
+            <p>Can you drag the labels to the correct boxes?</p>
+            <p class="instruction">Click on the box to see the fruit inside.</p>
+            <div class="boxes">
+                <div class="box" onclick="revealFruit(this, 'orange')">
+                    <img src="Asset/Image/BoxApple.png" alt="Apple Box">
+                    <p class="label"></p>
+                    <img src="Asset/Image/orange.png" alt="Orange" class="fruit" style="display: none;">
+                </div>
+                <div class="box" onclick="revealFruit(this, 'apple')">
+                    <img src="Asset/Image/BoxOrange.png" alt="Orange Box">
+                    <p class="label"></p>
+                    <img src="Asset/Image/apple.png" alt="Apple" class="fruit" style="display: none;">
+                </div>
+                <div class="box" onclick="revealFruit(this, 'orange')">
+                    <img src="Asset/Image/BoxAppleAndOrange.png" alt="Apple and Orange Box">
+                    <p class="label"></p>
+                    <img src="Asset/Image/orange.png" alt="Orange" class="fruit" style="display: none;">
+                </div>
+            </div>
+            <div class="labels">
+                <button class="label-button" draggable="true" ondragstart="drag(event)">Orange</button>
+                <button class="label-button" draggable="true" ondragstart="drag(event)">Apple</button>
+                <button class="label-button" draggable="true" ondragstart="drag(event)">Apple & Orange</button>
+            </div>
+            <div class="check">
+            <button class="check-button" onclick="checkOrder()">Check</button>
+        </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content" id="popup-content">
+            <p id="popup-message"></p>
+        </div>
+    </div>
+    <script src="Asset/js/script.js"></script>
+</body>
+</html>
